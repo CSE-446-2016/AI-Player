@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:id="@+id/parentRelativeLayout"
+    android:fitsSystemWindows="true">
+
+    <!--    Upper Half of Screen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.cleveroad.audiovisualization.GLAudioVisualizationView
+                android:id="@+id/visualizerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="2dp"
+                app:av_backgroundColor="#00032a"
+                app:av_bubblesPerLayer="16"
+                app:av_bubblesRandomizeSizes="true"
+                app:av_bubblesSize="25dp"
+                app:av_layersCount="4"
+                app:av_wavesColors="@array/rainbow"
+                app:av_wavesCount="50"
+                app:av_wavesFooterHeight="170dp"
+                app:av_wavesHeight="60dp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!--    Lower Half of Screen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF4F92">
+            <!--            Layout to contain song info (songTitle & songText)-->
+            <RelativeLayout
+                android:id="@+id/songInformationNowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--                songTitle-->
+                <TextView
+                    android:id="@+id/songName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="marquee"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="#fff"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    tools:text="default_song_title" />
+
+
+            </RelativeLayout>
+            <!--      Layout to contain the 'Seekbar' & 'start' & 'end' time-->
+            <RelativeLayout
+                android:id="@+id/seekBarLayoutNowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/songInformationNowPlaying">
+                <!--SeekBar-->
+                <SeekBar
+                    android:id="@+id/seekBarNowPlaying"
+                    android:layout_width="370dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="#FFFFFF" />
+                <!--    SeekBar 'Start Time'-->
+                <TextView
+                    android:id="@+id/startTimeSeekBarNowPlaying"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seekBarNowPlaying"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#fff" />
+
+
+                <!--    SeekBar 'End Time'-->
+                <TextView
+                    android:id="@+id/endTimeSeekBarNowPlaying"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seekBarNowPlaying"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#fff" />
+            </RelativeLayout>
+            <!--          Layout to act as a container for the widgets / controls-->
+            <RelativeLayout
+                android:id="@+id/controlPanelNowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seekBarLayoutNowPlaying"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="100dp"
+                android:visibility="visible">
+
+
+                <ImageButton
+                    android:id="@+id/previousButtonNowPlaying"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="19dp"
+                    android:layout_toStartOf="@id/playPauseButtonNowPlaying"
+                    android:background="@drawable/play_previous_icon"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp" />
+
+                <ImageButton
+                    android:id="@+id/playPauseButtonNowPlaying"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/play_icon"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp" />
+
+
+                <ImageButton
+                    android:id="@+id/nextButtonNowPlaying"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="19dp"
+                    android:layout_toEndOf="@id/playPauseButtonNowPlaying"
+                    android:background="@drawable/play_next_icon"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voice Mode"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/shada"
+                android:textStyle="bold |italic"
+                android:textSize="20dp"
+                />
+            <Switch
+                android:id="@+id/switchVoiceEnableSettingFrag"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="32dp"
+                android:background="#212121" />
+
+            <ImageButton
+                android:id="@+id/voiceSpeakerButton"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/voice_button"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView_shake_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shake Mode"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/shada"
+                android:textStyle="bold |italic"
+                android:textSize="20dp"
+                />
+            <Switch
+                android:id="@+id/switchShakeSettingFrag"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="60dp"
+                android:layout_marginTop="32dp"
+                android:background="#212121" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

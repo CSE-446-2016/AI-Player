@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+
+    <item
+        android:id = "@+id/nav_now_playing"
+        android:title="Now Playing"
+        android:icon="@drawable/nav_now_playing_icon"/>
+
+    <item
+        android:id = "@+id/nav_all_songs"
+        android:title="All Songs"
+        android:icon="@drawable/navigation_allsongs"/>
+
+    <item
+        android:id = "@+id/nav_favorite"
+        android:title="Favorites"
+        android:icon="@drawable/navigation_favorites"/>
+
+    <item
+        android:id = "@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/navigation_settings"/>
+
+    <item
+        android:id = "@+id/nav_about_us"
+        android:title="About Us"
+        android:icon="@drawable/navigation_aboutus"/>
+
+
+</menu>

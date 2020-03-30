@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SweProject</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first">1. To Play the song use <b>Play</b> command. \n2. To pause the song use <b>Pause</b> command. \n3. To play the next song use <b>Next</b> command. \n4. To play the previous song use <b>Previous</b> command.</string>
+    <string name="About">This is a music player that can also be conrolled using some voice commands. \n \n This app is developed by Saif and Tazkia.\n Team Orion. </string>
+    <string name="shake">fe </string>
+</resources>
